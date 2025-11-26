@@ -3,7 +3,7 @@ const int ledPins[8] = {2,3,4,5,6,7,8,9};
 const int buttonPin = 10;
 
 unsigned char mode = 0;
-#define TOTAL_MODES 5  // Because you actually have 5 modes
+#define TOTAL_MODES 4  // Now 4 modes after removing binary counter (modes 0..3)
 
 // ------------------------
 // Delay functions
@@ -106,17 +106,10 @@ void loop() {
       if (check_button()) return;
       break;
 
-    // --- MODE 3: Binary Counter ---
-    case 3:
-      for (int i = 0; i < 256; i++) {
-        writePort(~i);  
-        delay_short();
-        if (check_button()) return;
-      }
-      break;
+    // (Mode 3 removed)
 
-    // --- MODE 4: Odd-Even Lights ---
-    case 4:
+    // --- MODE 3: Odd-Even Lights ---
+    case 3:
       // All odd pins (1,3,5,7) ON
       writePort(0xAA); // Binary: 10101010
       delay_blink();
