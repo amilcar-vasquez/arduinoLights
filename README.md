@@ -42,5 +42,3 @@ File references
 
 - `changingLights.ino` — main sketch containing all modes and helper functions.
 - `upload.sh` — (if present) helper script to upload the sketch from the command line.
-
-If you want, I can update Mode 3 to show the non-inverted counter, or add a small wiring diagram and `README` example photo placeholder.  
